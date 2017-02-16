@@ -5,18 +5,22 @@ import ngMaterial from 'angular-material'
 import ngMessages from 'angular-messages'
 import uiRouter from 'angular-ui-router'
 
+import bmfflHome from './home/home.module'
+
 import { app } from './app.component'
 import { configure } from './app.config'
 import { visualizeRouting } from './app.run'
 
 export default
   angular
-    .module('clicker-app', [
+    .module('bmffl-app', [
       ngAnimate,
       ngAria,
       ngMaterial,
       ngMessages,
-      uiRouter
+      uiRouter,
+
+      bmfflHome
     ])
     .component('app', app)
     .config(configure)
