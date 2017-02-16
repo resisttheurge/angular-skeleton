@@ -1,3 +1,36 @@
 <div layout-padding layout-margin layout-fill layout="column" layout-align="center center">
-  <ui-view></ui-view>
+  <div layout="column">
+    <div flex id="scoreboard">
+      <p>{{ $app.games }}</p>
+    </div>
+    <div flex id="navbar">
+      <md-content class="md-padding">
+        <md-nav-bar
+          md-selected-nav-item="currentNavItem"
+          nav-bar-aria-label="navigation links">
+          <md-nav-item md-nav-click="goto('page1')" name="page1">
+            Page One
+          </md-nav-item>
+          <md-nav-item md-nav-click="goto('page2')" name="page2">
+            Page Two
+          </md-nav-item>
+          <md-nav-item md-nav-click="goto('page3')" name="page3">
+            Page Three
+          </md-nav-item>
+          <md-nav-item md-nav-href="#page4" name="page5">
+            Page Four
+          </md-nav-item>
+          <md-nav-item md-nav-sref="app.page5" name="page4">
+            Page Five
+          </md-nav-item>
+          <md-nav-item md-nav-sref="page6" sref-opts="{reload:true, notify:true}">
+            Page Six
+          </md-nav-item>
+
+        </md-nav-bar>
+      </md-content>
+    </div>
+
+    <ui-view></ui-view>
+  </div>
 </div>
