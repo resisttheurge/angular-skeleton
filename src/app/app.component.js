@@ -22,9 +22,11 @@ class AppController {
               }
     }).then(function successCallback(response) {
       console.log(response.data)
+      console.log(response.status)
       return response
     }, function errorCallback(response) {
       console.log(response.data)
+      console.log(response.status)
       return response
     })
   }
