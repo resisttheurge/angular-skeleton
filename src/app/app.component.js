@@ -7,7 +7,7 @@ class AppController {
     this.$location = location
     this.$http = $http
     this.$sce = $sce
-    this.getRecentGames()
+    let recentGames = this.getRecentGames()
   }
 
   getRecentGames() {
@@ -22,11 +22,8 @@ class AppController {
               }
     }).then(function successCallback(response) {
       console.log(response.data)
-      console.log(response.status)
-      return response
+      return response.data
     }, function errorCallback(response) {
-      console.log(response.data)
-      console.log(response.status)
       return response
     })
   }
