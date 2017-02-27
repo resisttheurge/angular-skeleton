@@ -2,16 +2,17 @@ import templateUrl from './app.component.html'
 
 /* @ngInject */
 class AppController {
-  constructor ($log, $location, $http, $sce) {
+  constructor ($log, $location, $http, $sce, $scope) {
     $log.debug('AppController instantiated')
     this.$location = location
     this.$http = $http
     this.$sce = $sce
-    let recentGames = this.getRecentGames()
+    this.$scope = $scope
+    $scope.recentGames = this.getRecentGames()
   }
 
   getRecentGames() {
-    let games = []
+    let recentGames = this
     this.$http({
       method: 'GET',
       url: 'http://localhost:8080/games/recent',
@@ -21,8 +22,9 @@ class AppController {
                 'Access-Control-Allow-Origin': 'http://localhost:3000/'
               }
     }).then(function successCallback(response) {
-      console.log(response.data)
-      return response.data
+      recentGames = response.data
+      console.log(recentGames)
+      return recentGames
     }, function errorCallback(response) {
       return response
     })

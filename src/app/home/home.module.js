@@ -4,7 +4,7 @@ import { configure } from './home.config'
 
 export default
   angular
-    .module('bmffl-home', [])
+    .module('bmfflHome', [])
     .component('bmfflHome', home)
     .service('$home', HomeService)
     .config(configure)

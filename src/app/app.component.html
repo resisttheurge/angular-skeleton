@@ -1,7 +1,13 @@
 <div layout-padding layout-margin layout-fill layout="column" layout-align="center center">
   <div layout="column">
     <div flex id="scoreboard">
-      <p>yo</p>
+      <md-list>
+        <md-list-item class="md-2-line" ng-repeat="item in recentGames">
+          <div class="md-list-item-text">
+            <h3>{{item.id}}</h3>
+          </div>
+        </md-list-item>
+      </md-list>
     </div>
     <div flex id="navbar">
       <md-content class="md-padding">
