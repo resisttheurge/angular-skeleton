@@ -8,7 +8,7 @@ class AppController {
     this.$http = $http
     this.$sce = $sce
     this.$scope = $scope
-    $scope.recentGames = this.getRecentGames()
+    this.recentGames = this.getRecentGames()
   }
 
   getRecentGames() {
