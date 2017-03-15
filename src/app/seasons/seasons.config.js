@@ -1,4 +1,4 @@
-import { home } from './seasons.states'
+import { seasons } from './seasons.states'
 
 /* @ngInject */
 export function configure ($stateProvider) {

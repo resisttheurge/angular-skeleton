@@ -1,7 +1,11 @@
-#scoreboard {
+#top-fixture {
   width: 100%;
-  height: 150px;
+  height: 200px;
   border: 2px solid black;
+}
+
+#scores {
+  height: 100px;
 }
 
 #navbar {
