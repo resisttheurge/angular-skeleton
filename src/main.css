@@ -1,7 +1,12 @@
-#scoreboard {
+#top-fixture {
   width: 100%;
-  height: 150px;
+  max-width: 800px;
+  height: 30%;
   border: 2px solid black;
+}
+
+#scores {
+  height: 100px;
 }
 
 #navbar {

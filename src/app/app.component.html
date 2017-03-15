@@ -1,23 +1,24 @@
-<div layout-padding layout-margin layout-fill layout="column" layout-align="center center">
-  <div layout="column">
-    <div flex id="scoreboard">
-      <md-list>
-        <md-list-item class="md-2-line" ng-repeat="item in recentGames">
-          <div class="md-list-item-text">
-            <h3>{{item.id}}</h3>
-          </div>
-        </md-list-item>
-      </md-list>
-    </div>
-    <div flex id="navbar">
+<body>
+<div layout-padding layout="column" layout-align="center center">
+
+  <div flex id="top-fixture">
+    <md-list id="scores">
+      <md-list-item class="md-2-line" ng-repeat="item in scores">
+        <div class="md-list-item-text">
+          <h3>{{item.id}}</h3>
+        </div>
+      </md-list-item>
+    </md-list>
+
+    <div flex layout="row" layout-align="center" id="navbar">
       <md-content class="md-padding">
         <md-nav-bar
           md-selected-nav-item="currentNavItem"
           nav-bar-aria-label="navigation links">
-          <md-nav-item md-nav-click="goto('page1')" name="page1">
+          <md-nav-item md-nav-click="goto('page1')" name="page1" ui-sref="home">
             Home
           </md-nav-item>
-          <md-nav-item md-nav-click="goto('page2')" name="page2">
+          <md-nav-item md-nav-click="goto('page2')" name="page2" ui-sref="seasons">
             Seasons
           </md-nav-item>
           <md-nav-item md-nav-click="goto('page3')" name="page3">
@@ -36,7 +37,8 @@
         </md-nav-bar>
       </md-content>
     </div>
-
-    <ui-view></ui-view>
   </div>
+
+  <ui-view></ui-view>
 </div>
+</body>
