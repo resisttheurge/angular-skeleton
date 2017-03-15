@@ -1,8 +1,9 @@
-<div layout-padding layout="column" layout-align="center stretch">
+<body>
+<div layout-padding layout="column" layout-align="center center">
 
   <div flex id="top-fixture">
     <md-list id="scores">
-      <md-list-item class="md-2-line" ng-repeat="item in recentGames">
+      <md-list-item class="md-2-line" ng-repeat="item in scores">
         <div class="md-list-item-text">
           <h3>{{item.id}}</h3>
         </div>
@@ -40,3 +41,4 @@
 
   <ui-view></ui-view>
 </div>
+</body>
