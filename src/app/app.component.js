@@ -2,15 +2,16 @@ import templateUrl from './app.component.html'
 
 /* @ngInject */
 class AppController {
-  constructor ($log, $location, $http, $sce) {
+  constructor ($log, $location, $http, $sce, $scope) {
     $log.debug('AppController instantiated')
     this.$location = location
     this.$http = $http
     this.$sce = $sce
-    this.scores = this.getRecentGames()
+    $scope.recentGames = this.getRecentGames()
+    $scope.str = "stuff"
   }
 
- getRecentGames() {
+ getRecentGames = function() {
     let recentGames = this
     this.$http({
       method: 'GET',
