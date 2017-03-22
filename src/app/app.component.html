@@ -1,3 +1,50 @@
-<div layout-padding layout-margin layout-fill layout="column" layout-align="center center">
-  <ui-view></ui-view>
+<body>
+<div layout-padding layout="column" layout-align="center center">
+    <div flex id="top-fixture">
+      <h3>{{ str }}</h3>
+      <h3>{{ getRecentGames.length }}</h3>
+      <md-list>
+        <!-- <div class="md-list-item-text"> -->
+          <md-list-item class="md-2-line" ng-repeat="object in recentGames">
+            <h3>{{$index}}</h3>
+            <p>{{ object["awayScore"] }}</p>
+          </md-list-item>
+        <!-- </div> -->
+      </md-list>
+
+      <div flex layout="row" layout-align="center" id="navbar">
+        <md-content class="md-padding">
+          <md-nav-bar
+            md-selected-nav-item="currentNavItem"
+            nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-click="goto('page1')" name="page1" ui-sref="home">
+              Home
+            </md-nav-item>
+            <md-nav-item md-nav-click="goto('page2')" name="page2" ui-sref="seasons">
+              <div class="menu-demo-container" layout-align="center center" layout="column">
+              </div>
+              Seasons
+            </md-nav-item>
+            <md-nav-item md-nav-click="goto('page3')" name="page3">
+              Owners
+            </md-nav-item>
+            <md-nav-item md-nav-href="#page4" name="page5">
+              Teams
+            </md-nav-item>
+            <md-nav-item md-nav-sref="app.page5" name="page4">
+              Head To Head
+            </md-nav-item>
+            <md-nav-item md-nav-sref="page6" sref-opts="{reload:true, notify:true}">
+              All Time Stats
+            </md-nav-item>
+
+          </md-nav-bar>
+        </md-content>
+      </div>
+    </div>
+
+  <div id="conatiner">
+    <ui-view></ui-view>
+  </div>
 </div>
+</body>
