@@ -1,14 +1,15 @@
 <body>
 <div layout-padding layout="column" layout-align="center center">
     <div flex id="top-fixture">
-      <h3>{{str}}</h3>
+      <h3>{{ str }}</h3>
+      <h3>{{ getRecentGames.length }}</h3>
       <md-list>
-        <div class="md-list-item-text">
+        <!-- <div class="md-list-item-text"> -->
           <md-list-item class="md-2-line" ng-repeat="object in recentGames">
-            <!-- <h3>{{item.$index}}</h3> -->
-            <p>{{object.id}}</p>
+            <h3>{{$index}}</h3>
+            <p>{{ object["awayScore"] }}</p>
           </md-list-item>
-        </div>
+        <!-- </div> -->
       </md-list>
 
       <div flex layout="row" layout-align="center" id="navbar">
